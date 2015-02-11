@@ -1,0 +1,25 @@
+{
+	"name": "carrooi/docx-extractor",
+	"type": "library",
+	"description": "DOCX text extractor",
+	"keywords": ["carrooi", "docx", "text", "extract", "extractor"],
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "David Kudera",
+			"homepage": "http://davidkudera.com",
+			"email": "kudera.d@gmail.com"
+		}
+	],
+	"require-dev": {
+		"nette/tester": "~1.3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Carrooi\\DocxExtractor\\": "src/"
+		},
+		"classmap": [
+			"src/exceptions.php"
+		]
+	}
+}
