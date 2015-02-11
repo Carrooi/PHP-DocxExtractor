@@ -44,8 +44,11 @@ class DocxExtractor
 		$zip->close();
 
 		$text = $xml->saveXML();
-		$text = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $text);
-		$text = str_replace('</w:r></w:p>', "\r\n", $text);
+		$text = strtr($text, [
+			'</w:r></w:p></w:tc><w:tc>' => " ",
+			'</w:r></w:p>' => "\r\n",
+			'</w:p>' => "\r\n",
+		]);
 
 		return strip_tags($text);
 	}
