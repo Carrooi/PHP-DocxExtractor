@@ -43,7 +43,12 @@ class DocxExtractor
 
 		$zip->close();
 
-		return strip_tags($xml->saveXML());
+		$text = $xml->saveXML();
+		$text = strtr($text, [
+			'<w:p>' => "<w:p>\n",
+		]);
+
+		return strip_tags($text);
 	}
 
 }
