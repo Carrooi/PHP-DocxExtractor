@@ -48,6 +48,7 @@ class DocxExtractor
 			'</w:r></w:p></w:tc><w:tc>' => " ",
 			'</w:r></w:p>' => "\r\n",
 			'</w:p>' => "\r\n",
+			'<w:tab/>' => " ",
 		]);
 
 		return strip_tags($text);
